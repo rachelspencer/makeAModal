@@ -7,6 +7,7 @@ This document will assist in making a modal for your app. When a user clicks a b
 2. Detemine Parent component, create modal state
 3. Add props to 'Modal'
 4. Add some basic styling
+5. Add Portal feature
 6. Make the modal more resusable
 7. Add some stylin' 🕶️
 
@@ -41,15 +42,17 @@ Cool, so now you should have the modal appearing when you click the button that 
 ### Add some basic styling
 
 Lets quickly add a little bit of styling just to see how its all going. Add these `classNames`, add a `Modal.css` file and import the css file into your `Modal.js` component.
-![Add styling classNames](https://github.com/rachelspencer/makeAModal/assets/111473039/aaa4642c-e954-42de-b690-40147778f0a5)
+![Add classNames](https://github.com/rachelspencer/makeAModal/assets/111473039/ae21e4c7-75eb-4eff-9dd3-7f1784b0be65)
+
 
 ![Modal base styling](https://github.com/rachelspencer/makeAModal/assets/111473039/6448521a-ccb0-435c-956c-305b2a4f5c7a)
 
 It should look like this now that you have some basic styling in place:
 <img width="1233" alt="Modal basic styling" src="https://github.com/rachelspencer/makeAModal/assets/111473039/0a0a84cf-3776-4cc3-94df-333d8c79be0e">
 
+BUT, there is a chance that it won't! This is becuase perhaps you have parent positioning that is affecting the styles on the modal. To get arounf this we are going to use Reacts Portal feature.
 
-### Stylin' time 🕶️
+### Add Portal feature 🕶️
 We are going to create a portal for this modal. This is so that this component will never accidently have a 'positioned' parent, which will throw out styling off and potentially not cover the whole screen. By using the portal the Modal will be positioned to the HTML doc, and therefore its parent will be the Body. 
 
 1. Inside the `Public` folder go to the index.html file. Scroll to the bottom and above the `</body>` closing tag add thr following:
@@ -58,4 +61,7 @@ We are going to create a portal for this modal. This is so that this component w
 After saving, refresh the app, and inspect the page. You should see the `div` just added. This is where we want to render the `Modal`.
 ![check index html in the dom](https://github.com/rachelspencer/makeAModal/assets/111473039/e632a94f-23a7-49a3-8124-dada6284c569)
 
-2. Back in the `Modal.js` component, import `ReactDom`. Edit the return statement for the `Modal` by pasting the modals content in as the first argument and then adding a query selector as the second arguement which points to where this component should render.
+2. Back in the `Modal.js` component, import `ReactDom`. Edit the return statement for the `Modal` by pasting the modals current return content in as the first argument and then adding a query selector as the second arguement which references the class we added on the div added into the index.html. This will select this and render the component here.
+![Add styling classNames](https://github.com/rachelspencer/makeAModal/assets/111473039/aaa4642c-e954-42de-b690-40147778f0a5)
+
+### Make the modal more resusable
