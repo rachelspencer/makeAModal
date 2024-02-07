@@ -10,6 +10,7 @@ This document will assist in making a modal for your app. When a user clicks a b
 5. Add Portal feature
 6. Make the modal more resusable
 7. Add some more stylin' 🕶️
+8. Prevent scrolling
 
 ## Steps expanded
 ### Make a 'Modal' component
@@ -44,8 +45,7 @@ Cool, so now you should have the modal appearing when you click the button that 
 Lets quickly add a little bit of styling just to see how its all going. Add these `classNames`, add a `Modal.css` file and import the css file into your `Modal.js` component.
 ![Add classNames](https://github.com/rachelspencer/makeAModal/assets/111473039/ae21e4c7-75eb-4eff-9dd3-7f1784b0be65)
 
-
-![Modal base styling](https://github.com/rachelspencer/makeAModal/assets/111473039/6448521a-ccb0-435c-956c-305b2a4f5c7a)
+![Modal base styling](https://github.com/rachelspencer/makeAModal/assets/111473039/9ba2ed42-0449-4cbd-ba92-3eec96ef1a81)
 
 It should look like this now that you have some basic styling in place:
 <img width="1233" alt="Modal basic styling" src="https://github.com/rachelspencer/makeAModal/assets/111473039/0a0a84cf-3776-4cc3-94df-333d8c79be0e">
@@ -92,4 +92,12 @@ added to Modal.js:
 ![more styling classNames](https://github.com/rachelspencer/makeAModal/assets/111473039/4a900b92-a84d-48ef-ba52-7f8b52e89dae)
 
 added to Modal.css:
-![css after](https://github.com/rachelspencer/makeAModal/assets/111473039/12a70236-c904-4137-a61b-220d236606db)
+![css after](https://github.com/rachelspencer/makeAModal/assets/111473039/48822400-2eb0-4d5f-89b5-210acf7c862c)
+
+
+### Prevent scrolling
+
+If there is lots of content on the page the modal isn't going to cover the whole screen and you will be able to scroll a little. We want to stop this. We can add additional styling to our `<body` element in our `index.html` page to account for this case. We can use the `useEffect()` hook for this, which will look for when out `Modal.js` component is first displayed, we can find the body element and add a class to it that will prevent scrolling when the modal is being shown. When the `Modal.js` component is closed, we can go back to the DOM and remove the class. Here we go!
+
+![Add useEffect hook](https://github.com/rachelspencer/makeAModal/assets/111473039/07a27497-c3ae-4a60-97e5-39bfd1488df4)
+
