@@ -85,3 +85,11 @@ After (Modal.js):
 ![Modal After](https://github.com/rachelspencer/makeAModal/assets/111473039/0e8ce72f-ee4e-4f23-98eb-a4b55bc2e0e4)
 
 ### Add some more stylin' 🕶️
+
+How you want to style your modal is up to you, but these images show what I added. You will need to also add more if you want your site to be responsive. 
+
+added to Modal.js:
+![more styling classNames](https://github.com/rachelspencer/makeAModal/assets/111473039/4a900b92-a84d-48ef-ba52-7f8b52e89dae)
+
+added to Modal.css:
+![css after](https://github.com/rachelspencer/makeAModal/assets/111473039/12a70236-c904-4137-a61b-220d236606db)
