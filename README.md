@@ -9,7 +9,7 @@ This document will assist in making a modal for your app. When a user clicks a b
 4. Add some basic styling
 5. Add Portal feature
 6. Make the modal more resusable
-7. Add some stylin' 🕶️
+7. Add some more stylin' 🕶️
 
 ## Steps expanded
 ### Make a 'Modal' component
@@ -65,3 +65,23 @@ After saving, refresh the app, and inspect the page. You should see the `div` ju
 ![Add styling classNames](https://github.com/rachelspencer/makeAModal/assets/111473039/aaa4642c-e954-42de-b690-40147778f0a5)
 
 ### Make the modal more resusable
+
+We want the parent component that will essentially render the modal to be able to customize the content displayed in the modal. We are going to make it so the parent component can customize the text area, we are going to have the modal pass down a `{children}` prop. To customize the section of the modal that requires user interation, we are going to pass down a prop called `{actionBar}`. We will be refactoring our previous code slightly, but it will make the component more usable for other areas in the app, which is super dooper handy. 
+
+First, find where you are conditionaly rendering your `<Modal/>`. We are going to refactor this conditional so that we have more space to write the next part (it'll look neater, trust me). It will enable us to customize the `actionBar` prop and also render any children we like for the Modal. Look at these before and afters and make necessary changes to your code.
+
+Before (parent):
+![before](https://github.com/rachelspencer/makeAModal/assets/111473039/33e3aff5-c859-4c78-90ef-c273bc2637e1)
+
+After (parent):
+![Parent after](https://github.com/rachelspencer/makeAModal/assets/111473039/7621bbc0-7610-49f2-85d6-55b91720f508)
+
+
+To complete this refactor we have to alter a bit of code in the `Modal.js` component also. Refer to the before and after:
+Before (Modal.js):
+![Modal before](https://github.com/rachelspencer/makeAModal/assets/111473039/a70d9ff1-35b4-4652-9c98-5ee19830f953)
+
+After (Modal.js):
+![Modal After](https://github.com/rachelspencer/makeAModal/assets/111473039/0e8ce72f-ee4e-4f23-98eb-a4b55bc2e0e4)
+
+### Add some more stylin' 🕶️
